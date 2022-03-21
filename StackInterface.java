@@ -1,4 +1,4 @@
-**
+/**
    An interface for the ADT stack.
    @author Frank M. Carrano
    @author Timothy M. Henry
