@@ -1,5 +1,3 @@
-package proj2;
-
 public class LinkedStackTest {
 	 @SuppressWarnings({ "removal", "unchecked" })
 	public static void main(String [] args)
