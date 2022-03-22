@@ -1,18 +1,18 @@
 import java.util.EmptyStackException;
 
-public class ResizableArrayStack {
+public class ResizeableArrayStack<T> implements StackInterface<T> {
     private T[] stack;    // Array of stack entries
 	private int topIndex; // Index of top entry
-   private boolean integrityOK = false;
+    private boolean integrityOK = false;
 	private static final int DEFAULT_CAPACITY = 50;
 	private static final int MAX_CAPACITY = 10000;
   
-   public ResizableArrayStack()
+   public ResizeableArrayStack()
    {
       this(DEFAULT_CAPACITY);
    } // end default constructor
   
-   public ResizableArrayStack(int initialCapacity)
+   public ResizeableArrayStack(int initialCapacity)
    {
       integrityOK = false;
       checkCapacity(initialCapacity);
@@ -29,9 +29,10 @@ public class ResizableArrayStack {
    // Precondition: checkInitialization has been called.
 	private void doubleCapacity()
 	{
-      int newLength = 2 * bag.length;
+      Object bag;
+	  int newLength = 2 * stack.length;
       checkCapacity(newLength);
-      bag = Arrays.copyOf(bag, newLength);
+      bag = Arrays.copyOf(stack, newLength);
 	} // end doubleCapacity
    
    // Throws an exception if the client requests a capacity that is too large.
@@ -43,7 +44,7 @@ public class ResizableArrayStack {
    } // end checkCapacity
    
    // Throws an exception if receiving object is not initialized.
-   private void checkintegrity()
+   private void checkIntegrity()
    {
       if (!integrityOK)
          throw new SecurityException ("ArrayBag object is corrupt.");
