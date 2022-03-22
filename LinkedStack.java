@@ -89,5 +89,11 @@ public final class LinkedStack<T> implements StackInterface<T>
          next = nextNode;
       } // end setNextNode
 	} // end Node
+	
+
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 } // end LinkedStack
